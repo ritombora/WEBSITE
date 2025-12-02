@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritom Portfolio</title>
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="back-vid">
+        <source src="bgstyle.mp4" type="video/mp4">
+    </video>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-glass">
+
+            <!-- LEFT SIDE -->
+            <div class="hero-info">
+                <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-delay="700">
+                    Hi, I'm <span class="hero-name">Ritom Bora</span>
+                </h1>
+                <h2 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="900">
+                    I'm a Developer
+                </h2>
+                <p data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1000">
+                    I create fast, modern websites with a balance of design and logic. My focus is clarity,
+                    performance, and turning rough ideas into clean, functional digital experiences.
+                </p>
+
+                <ul class="ul-icons">
+                    <li><a href="https://github.com/ritom9244-jpg" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-github"></i></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/ritom.00/" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li><a href="https://www.facebook.com/ritom.borah.720455" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-facebook"></i></a>
+                    </li>
+                    <li><a href="https://x.com/Ritom_04" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                </ul>
+
+                <div class="buttons">
+                   <button id="loginBtn" class="hire-btn">Hire Me</button>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE IMAGE -->
+            <div class="hero-image" data-aos="fade-right" data-aos-duration="1000">
+                <img src="main.jpg" alt="Ritom Bora Photo">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- LOGIN POPUP MODAL -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+    
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+    <script>
+    // Modal open
+    document.querySelector(".hire-btn").addEventListener("click", () => {
+        document.querySelector(".modal").style.display = "block";
+    });
+
+    // Modal close
+    document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector(".modal").style.display = "none";
+    });
+
+    // Outside click → close
+    window.addEventListener("click", (e) => {
+        if (e.target.classList.contains("modal")) {
+            document.querySelector(".modal").style.display = "none";
+        }
+    });
+</script>
+
+</body>
+
+<!-- AOS Script -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- LOGIN MODAL SCRIPT -->
+<script>
+var modal = document.getElementById("loginModal");
+var btn = document.getElementById("loginBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
